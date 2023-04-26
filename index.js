@@ -12,3 +12,7 @@ app.listen(port, (req, res) =>{
     console.log(`Server is running on ${port}`)
 })
 
+app.get("/hello", (req, res) => {
+    res.status(201).send("Api is working: Hello")
+})
+

@@ -50,3 +50,18 @@ export const addToDo = (req, res) => {
     })
     .catch(err => console.log(err))
 }
+
+export const updateToDoById = (req, res) => {
+    const id = parseInt(req.params.id)
+    ToDo.update({
+        title: req.body.title,
+        priority: req.body.priority},        
+        {where: {id: id}
+    })
+    .then(() => {
+        res.status(200).send({
+            message: "ToDo updated."
+        })
+    })
+    .catch(err => console.log(err))
+}

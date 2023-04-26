@@ -21,3 +21,18 @@ export const getToDoById = (req, res) => {
     })
     .catch(err => console.log(err))
 }
+
+export const deleteToDoById = (req, res) => {
+    const id = parseInt(req.params.id)
+    ToDo.destroy({
+        where: {
+            id: id
+        }
+    })
+    .then(() => {
+        res.status(204).send({
+            message: `ToDo at ${id} was deleted.`
+        })
+    })
+    .catch(err => console.log(err))
+}

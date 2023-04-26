@@ -32,6 +32,20 @@ export const deleteToDoById = (req, res) => {
     .then(() => {
         res.status(204).send({
             message: `ToDo at ${id} was deleted.`
+            // 204 doesn't send a message
+        })
+    })
+    .catch(err => console.log(err))
+}
+
+export const addToDo = (req, res) => {
+    ToDo.create({
+        title: req.body.title,
+        priority: req.body.priority
+    })
+    .then(() => {
+        res.status(201).send({
+            message: "Created ToDo"
         })
     })
     .catch(err => console.log(err))

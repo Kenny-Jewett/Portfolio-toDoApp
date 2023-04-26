@@ -16,8 +16,7 @@ export const ToDo = sequelize.define("todo_list",
     priority: {
         type: Sequelize.BOOLEAN,
         allowNull: true
-    }
+    },
+    
 
-
-
-})
+}, { timestamps: false }); 

@@ -1,0 +1,24 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "A todo app with a db",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon index.js"
+  },
+  "author": "Kenny Jewett",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.4",
+    "node": "^19.8.1",
+    "sequelize": "^6.31.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

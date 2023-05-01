@@ -2,7 +2,23 @@ import { ToDo } from "../models/toDoModel.js"
 
 
 export const getTest = (req, res) => {
-    res.status(201).send("Api is working: Hello")
+     const priority = req.query.priority
+
+    ToDo.findAll({order: [['priority', `${priority}`]]})
+    .then((todos) => {
+        res.status(200).send(todos)
+    })
+    .catch(err => console.log(err))
+}
+
+export const getToDoByTitle = (req, res) => {
+     const search = req.params.search
+
+    ToDo.findAll({where: {title: search}})
+    .then((todos) => {
+        res.status(200).send(todos)
+    })
+    .catch(err => console.log(err))
 }
 
 export const getToDos = (req, res) => {

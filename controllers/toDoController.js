@@ -1,7 +1,12 @@
 import { ToDo } from "../models/toDoModel.js"
 
-
 export const getTest = (req, res) => {
+    const testString = req.query.test
+    res.status(200).send(`Query string is: ${testString}`)
+}
+
+
+export const getSort = (req, res) => {
      const priority = req.query.priority
 
     ToDo.findAll({order: [['priority', `${priority}`]]})

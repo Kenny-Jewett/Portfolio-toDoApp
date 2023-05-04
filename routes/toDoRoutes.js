@@ -1,10 +1,12 @@
 import Router from "express";
 
-import { addToDo, deleteToDoById, getTest, getToDoById, getToDoByTitle, getToDos, updateToDoById } from "../controllers/toDoController.js";
+import { addToDo, deleteToDoById, getSort, getTest, getToDoById, getToDoByTitle, getToDos, updateToDoById } from "../controllers/toDoController.js";
 
 const router = Router();
 
-router.get("/test", getTest);
+router.get("/test", getTest)
+
+router.get("/sort", getSort);
 
 router.get("/todo", getToDos);
 
